@@ -48,21 +48,33 @@ $hotels = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <title>Document</title>
 </head>
 
 <body>
-    <ul>
-        <?php foreach ($hotels as $hotel) : ?>
-            <li>
-                <p><?= $hotel['name'] ?></p>
-                <p><?= $hotel['description'] ?></p>
-                <p><?= $hotel['vote'] ?></p>
-                <p><?= $hotel['distance_to_center'] ?></p>
-            </li>
-        <?php endforeach  ?>
-    </ul>
-
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Parking</th>
+                <th scope="col">Vote</th>
+                <th scope="col">Distance To Center</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($hotels as $hotel) : ?>
+                <tr>
+                    <th scope="row"><?= $hotel['name'] ?></th>
+                    <td><?= $hotel['description'] ?></td>
+                    <td><?= $hotel['parking'] ?></td>
+                    <td><?= $hotel['vote'] ?></td>
+                    <td><?= $hotel['distance_to_center'] ?></td>
+                </tr>
+            <?php endforeach ?>
+        </tbody>
+    </table>
 </body>
 
 </html>
