@@ -49,6 +49,8 @@ $hotels = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 
@@ -68,7 +70,11 @@ $hotels = [
                 <tr>
                     <th scope="row"><?= $hotel['name'] ?></th>
                     <td><?= $hotel['description'] ?></td>
-                    <td><?= $hotel['parking'] ?></td>
+                    <?php if ($hotel['parking']) : ?>
+                        <td><i class="fa-solid fa-circle-check green"></i></td>
+                    <?php else : ?>
+                        <td><i class="fa-solid fa-circle-xmark red"></i></td>
+                    <?php endif  ?>
                     <td><?= $hotel['vote'] ?></td>
                     <td><?= $hotel['distance_to_center'] ?></td>
                 </tr>
